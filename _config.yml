@@ -1,0 +1,5 @@
+# GitHub Pages (Jekyll) 設定
+# docs/ は社内向け設計メモのため、公開サイトの配信対象から除外する
+# （リポジトリ上では閲覧可。完全に隠す場合はリポジトリのprivate化＋GitHub Proが必要）
+exclude:
+  - docs

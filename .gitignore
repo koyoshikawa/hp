@@ -1,0 +1,6 @@
+# Claude Code ローカル設定（公開リポジトリに載せない）
+.claude/
+
+# 検証用一時ファイル
+_snap.html
+_check_*.png
