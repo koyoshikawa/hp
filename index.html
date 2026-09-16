@@ -46,6 +46,7 @@
     </div>
     <div class="container hero-inner">
       <p class="hero-tagline" id="tagline">建物のあらゆる情報を、デザインする。<span class="type-cursor" id="typeCursor" aria-hidden="true"></span></p>
+      <p class="hero-sub" id="heroSub">合同会社SIANは、“建築情報設計” を拓く設計事務所です。</p>
     </div>
     <div class="hero-scroll" aria-hidden="true">
       <span class="hero-scroll-text">DIVE</span><span class="hero-scroll-line"></span>
@@ -61,11 +62,11 @@
         <h2 class="section-title">会社概要</h2>
       </header>
       <dl class="company-list reveal">
-        <div class="company-row"><dt>社名</dt><dd>合同会社SIAN（Spatial Information of Architecture and Nature）</dd></div>
-        <div class="company-row"><dt>代表</dt><dd><span class="placeholder">【要記入：代表者名】</span></dd></div>
-        <div class="company-row"><dt>所在地</dt><dd><span class="placeholder">【要記入：所在地】</span></dd></div>
-        <div class="company-row"><dt>設立</dt><dd><span class="placeholder">【要記入：設立年月日】</span></dd></div>
-        <div class="company-row"><dt>事業内容</dt><dd>建築情報設計（木造建築の構造設計・構造計算、木造構造AI「PonkozAI」の開発・提供）</dd></div>
+        <div class="company-row"><dt>社名</dt><dd>合同会社SIAN</dd></div>
+        <div class="company-row"><dt>代表</dt><dd>吉川 晃平</dd></div>
+        <div class="company-row"><dt>所在地</dt><dd>大阪府大阪市淀川区宮原1-17-33-322 北沢産業ビル3階</dd></div>
+        <div class="company-row"><dt>設立</dt><dd>2026年4月</dd></div>
+        <div class="company-row"><dt>事業内容</dt><dd>建築情報設計（構造設計・構造計算、BIMモデルの作成、情報要件の定義支援、AIの開発・提供など）</dd></div>
         <div class="company-row"><dt>連絡先</dt><dd><a href="mailto:y@sian.bz">y@sian.bz</a></dd></div>
       </dl>
     </div>
@@ -88,8 +89,10 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 // タグラインのタイプ演出（JS無効・reduced-motion時は最初から全文表示）
 const tagline = document.getElementById('tagline');
 const cursor = document.getElementById('typeCursor');
+const heroSub = document.getElementById('heroSub');
 if (reduced) {
   cursor.style.display = 'none';
+  heroSub.classList.add('is-visible');
 } else {
   const textNode = tagline.firstChild;
   const fullText = textNode.textContent;
@@ -104,6 +107,8 @@ if (reduced) {
       const wait = (prev === '、') ? 420 : 90 + Math.random() * 80;
       setTimeout(type, wait);
     } else {
+      // 打ち終わったらひとことを浮かび上がらせ、カーソルは役目を終えて消える
+      setTimeout(() => heroSub.classList.add('is-visible'), 500);
       setTimeout(() => cursor.classList.add('is-done'), 2800);
     }
   };

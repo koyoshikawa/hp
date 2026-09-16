@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Read(//c/Users/Yoshikawa/AppData/Local/Temp/**)"
+      "Read(//c/Users/Yoshikawa/AppData/Local/Temp/**)",
+      "PowerShell(Remove-Item \"_snap.html\" -Force -Confirm:$false)"
     ]
   }
 }
