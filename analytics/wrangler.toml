@@ -1,0 +1,11 @@
+# SIAN アクセスログWorker（Cloudflare Workers + D1）
+name = "sian-log"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# 閲覧キー VIEW_KEY は `wrangler secret put VIEW_KEY` で登録（ファイルには書かない）
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sian_access_log"
+database_id = "b8295cfe-89df-46fb-a41f-1ec103993c88"
